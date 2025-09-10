@@ -7,17 +7,22 @@ import { Label } from '@/components/ui/label';
 import { Lock, LogIn } from 'lucide-react';
 import ShowPasswordButton from './showPasswordButton';
 import { redirect } from 'next/navigation';
+import { authenticate } from '@/app/actions/auth';
 
 export default function LoginForm() {
   const [showPassword, setShowPassword] = useState(false);
 
-  function handleSubmit(formData: FormData) {
+  async function handleSubmit(formData: FormData) {
     const login = formData.get('login')?.toString();
     const password = formData.get('password')?.toString();
     // TODO: add bcrypt hashing and salting for password comparison
     // TODO: secure admin routes
-    if (login === process.env.LOGIN && password === process.env.PASSWORD) {
+    const isAuthenticated = await authenticate(login!, password!);
+
+    if (isAuthenticated) {
       redirect('/admin');
+    } else {
+      alert('Invalid credentials');
     }
   }
 
@@ -28,7 +33,12 @@ export default function LoginForm() {
           Login
         </Label>
         <div className="relative">
-          <Input id="login" type="text" placeholder="Enter your login" />
+          <Input
+            id="login"
+            name="login"
+            type="text"
+            placeholder="Enter your login"
+          />
         </div>
       </div>
 
@@ -43,6 +53,7 @@ export default function LoginForm() {
           <Lock className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
           <Input
             id="password"
+            name="password"
             type={showPassword ? 'text' : 'password'}
             placeholder="Enter your password"
             // value={password}
