@@ -126,12 +126,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Navigation Bar */}
-      <Navbar />
-
-      {/* Scroll Up Button */}
-      <ScrollUp />
-
       {/* Main Content */}
       <main className="container mx-auto px-4 py-12">
         <div className="grid lg:grid-cols-2 gap-12">
