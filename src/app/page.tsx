@@ -20,12 +20,14 @@ import {
 import Link from 'next/link';
 import Image from 'next/image';
 import photoCV from '../../public/photo-CV.png';
+import Navbar from '@/components/landing/navbar/navbar';
+import ScrollUp from '@/components/landing/scrollup';
 
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-background">
       <section className="relative overflow-hidden bg-gradient-to-br from-background via-muted/20 to-accent/10 flex flex-col items-center justify-center h-screen">
-        <div className="container mx-auto px-4 flex flex-col items-center justify-center mt-16">
+        <div className="container mx-auto px-4 flex flex-col items-center justify-center">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Column - Text Content */}
             <div className="space-y-8">
@@ -63,12 +65,15 @@ export default function HomePage() {
               {/* Social Links */}
               <div className="flex gap-4">
                 <Button variant="ghost" size="sm" asChild>
-                  <Link href="https://github.com" target="_blank">
+                  <Link href="https://github.com/majkser" target="_blank">
                     <Github className="w-5 h-5" />
                   </Link>
                 </Button>
                 <Button variant="ghost" size="sm" asChild>
-                  <Link href="https://linkedin.com" target="_blank">
+                  <Link
+                    href="https://www.linkedin.com/in/miko%C5%82aj-kowalski-ab1b1531a"
+                    target="_blank"
+                  >
                     <Linkedin className="w-5 h-5" />
                   </Link>
                 </Button>
@@ -115,33 +120,17 @@ export default function HomePage() {
 
         {/* Scroll Indicator */}
         <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <div className="w-6 h-10 border-2 border-muted-foreground/30 rounded-full flex justify-center">
-            <div className="w-1 h-3 bg-muted-foreground/30 rounded-full mt-2"></div>
+          <div className="w-7 h-11 border-3 border-muted-foreground/75 rounded-full flex justify-center">
+            <div className="w-1 h-3 bg-muted-foreground/75 rounded-full mt-2"></div>
           </div>
         </div>
       </section>
 
       {/* Navigation Bar */}
-      <nav className="bg-muted/50 border-b border-border fixed top-0 left-0 right-0 z-10 backdrop-blur-sm">
-        <div className="container mx-auto px-4">
-          <div className="flex justify-center gap-8 py-4">
-            <Link
-              href="/articles"
-              className="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-accent hover:text-accent-foreground transition-colors"
-            >
-              <FileText className="w-4 h-4" />
-              Articles
-            </Link>
-            <Link
-              href="/projects"
-              className="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-accent hover:text-accent-foreground transition-colors"
-            >
-              <Code className="w-4 h-4" />
-              Projects
-            </Link>
-          </div>
-        </div>
-      </nav>
+      <Navbar />
+
+      {/* Scroll Up Button */}
+      <ScrollUp />
 
       {/* Main Content */}
       <main className="container mx-auto px-4 py-12">
