@@ -38,6 +38,15 @@ export default function Navbar() {
     >
       <div className="container mx-auto px-4">
         <div className="flex justify-center gap-8 py-4 text-primary">
+          {pathname !== '/' && (
+            <Link
+              href="/"
+              className="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-accent transition-colors"
+            >
+              <Home className="w-4 h-4" />
+              Home
+            </Link>
+          )}
           {pathname !== '/articles' && (
             <Link
               href="/articles"
@@ -54,15 +63,6 @@ export default function Navbar() {
             >
               <Code className="w-4 h-4" />
               Projects
-            </Link>
-          )}
-          {pathname !== '/' && (
-            <Link
-              href="/"
-              className="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-accent transition-colors"
-            >
-              <Home className="w-4 h-4" />
-              Home
             </Link>
           )}
         </div>
