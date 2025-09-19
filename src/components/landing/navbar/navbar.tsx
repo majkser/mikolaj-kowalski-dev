@@ -1,11 +1,13 @@
 'use client';
 
-import { FileText, Code } from 'lucide-react';
+import { FileText, Code, Home } from 'lucide-react';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
+import { usePathname } from 'next/navigation';
 
 export default function Navbar() {
+  const pathname = usePathname();
   const [isMounted, setIsMounted] = useState<boolean>(false);
 
   useEffect(() => {
@@ -36,20 +38,33 @@ export default function Navbar() {
     >
       <div className="container mx-auto px-4">
         <div className="flex justify-center gap-8 py-4 text-primary">
-          <Link
-            href="/articles"
-            className="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-accent transition-colors"
-          >
-            <FileText className="w-4 h-4" />
-            Articles
-          </Link>
-          <Link
-            href="/projects"
-            className="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-accent transition-colors"
-          >
-            <Code className="w-4 h-4" />
-            Projects
-          </Link>
+          {pathname !== '/articles' && (
+            <Link
+              href="/articles"
+              className="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-accent transition-colors"
+            >
+              <FileText className="w-4 h-4" />
+              Articles
+            </Link>
+          )}
+          {pathname !== '/projects' && (
+            <Link
+              href="/projects"
+              className="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-accent transition-colors"
+            >
+              <Code className="w-4 h-4" />
+              Projects
+            </Link>
+          )}
+          {pathname !== '/' && (
+            <Link
+              href="/"
+              className="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-accent transition-colors"
+            >
+              <Home className="w-4 h-4" />
+              Home
+            </Link>
+          )}
         </div>
       </div>
     </nav>
