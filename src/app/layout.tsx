@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import { Lora } from 'next/font/google';
 import './globals.css';
-import Navbar from '@/components/landing/navbar/navbar';
-import ScrollUp from '@/components/landing/scrollup';
+import Navbar from '@/components/navigation/navbar';
+import ScrollUp from '@/components/navigation/scrollup';
 
 const lora = Lora({
   variable: '--font-lora',

@@ -20,8 +20,7 @@ import {
 import Link from 'next/link';
 import Image from 'next/image';
 import photoCV from '../../public/photo-CV.png';
-import Navbar from '@/components/landing/navbar/navbar';
-import ScrollUp from '@/components/landing/scrollup';
+import ScrollIndicator from '@/components/landing/scrollIndicator';
 
 export default function HomePage() {
   return (
@@ -119,11 +118,7 @@ export default function HomePage() {
         </div>
 
         {/* Scroll Indicator */}
-        <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <div className="w-7 h-11 border-3 border-muted-foreground/75 rounded-full flex justify-center">
-            <div className="w-1 h-3 bg-muted-foreground/75 rounded-full mt-2"></div>
-          </div>
-        </div>
+        <ScrollIndicator />
       </section>
 
       {/* Main Content */}
