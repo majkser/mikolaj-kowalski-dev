@@ -1,13 +1,8 @@
 import { Button } from '@/components/ui/button';
-import {
-  Card,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { ArrowRight, ExternalLink } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
+import ProjectCard from '@/components/projectCard';
 import Link from 'next/link';
+import codeImage from '../../../public/code.jpeg';
 
 export default function RecentProjects() {
   return (
@@ -22,80 +17,27 @@ export default function RecentProjects() {
         </Button>
       </div>
       <div className="space-y-4">
-        <Card className="hover:shadow-lg transition-shadow">
-          <div className="aspect-video bg-gradient-to-br from-primary/10 to-accent/10 rounded-t-lg"></div>
-          <CardHeader>
-            <div className="flex items-start justify-between">
-              <div className="space-y-2">
-                <CardTitle className="text-xl hover:text-primary transition-colors">
-                  <Link href="/projects/ecommerce-platform">
-                    E-commerce Platform
-                  </Link>
-                </CardTitle>
-                <CardDescription>
-                  Full-stack e-commerce solution with React, Node.js, and
-                  PostgreSQL. Features include payment processing, inventory
-                  management, and admin dashboard.
-                </CardDescription>
-              </div>
-              <ExternalLink className="w-4 h-4 text-muted-foreground flex-shrink-0 mt-1" />
-            </div>
-            <div className="flex gap-2 pt-2">
-              <Badge variant="secondary">React</Badge>
-              <Badge variant="secondary">Node.js</Badge>
-              <Badge variant="secondary">PostgreSQL</Badge>
-            </div>
-          </CardHeader>
-        </Card>
-        <Card className="hover:shadow-lg transition-shadow">
-          <div className="aspect-video bg-gradient-to-br from-accent/10 to-primary/10 rounded-t-lg"></div>
-          <CardHeader>
-            <div className="flex items-start justify-between">
-              <div className="space-y-2">
-                <CardTitle className="text-xl hover:text-primary transition-colors">
-                  <Link href="/projects/task-management">
-                    Task Management App
-                  </Link>
-                </CardTitle>
-                <CardDescription>
-                  Collaborative task management application with real-time
-                  updates, drag-and-drop functionality, and team collaboration
-                  features.
-                </CardDescription>
-              </div>
-              <ExternalLink className="w-4 h-4 text-muted-foreground flex-shrink-0 mt-1" />
-            </div>
-            <div className="flex gap-2 pt-2">
-              <Badge variant="secondary">Next.js</Badge>
-              <Badge variant="secondary">WebSocket</Badge>
-              <Badge variant="secondary">Prisma</Badge>
-            </div>
-          </CardHeader>
-        </Card>
-        <Card className="hover:shadow-lg transition-shadow">
-          <div className="aspect-video bg-gradient-to-br from-primary/10 to-secondary/10 rounded-t-lg"></div>
-          <CardHeader>
-            <div className="flex items-start justify-between">
-              <div className="space-y-2">
-                <CardTitle className="text-xl hover:text-primary transition-colors">
-                  <Link href="/projects/analytics-dashboard">
-                    Analytics Dashboard
-                  </Link>
-                </CardTitle>
-                <CardDescription>
-                  Real-time analytics dashboard with interactive charts, data
-                  visualization, and customizable reporting features.
-                </CardDescription>
-              </div>
-              <ExternalLink className="w-4 h-4 text-muted-foreground flex-shrink-0 mt-1" />
-            </div>
-            <div className="flex gap-2 pt-2">
-              <Badge variant="secondary">Vue.js</Badge>
-              <Badge variant="secondary">D3.js</Badge>
-              <Badge variant="secondary">MongoDB</Badge>
-            </div>
-          </CardHeader>
-        </Card>
+        <ProjectCard
+          href="/projects/ecommerce-platform"
+          title="E-commerce Platform"
+          description="Full-stack e-commerce solution with React, Node.js, and PostgreSQL. Features include payment processing, inventory management, and admin dashboard."
+          tags={['React', 'Node.js', 'PostgreSQL']}
+          image={codeImage}
+        />
+        <ProjectCard
+          href="/projects/task-management"
+          title="Task Management App"
+          description="Collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features."
+          tags={['Next.js', 'WebSocket', 'Prisma']}
+          image={codeImage}
+        />
+        <ProjectCard
+          href="/projects/analytics-dashboard"
+          title="Analytics Dashboard"
+          description="Real-time analytics dashboard with interactive charts, data visualization, and customizable reporting features."
+          tags={['Vue.js', 'D3.js', 'MongoDB']}
+          image={codeImage}
+        />
       </div>
     </section>
   );
