@@ -30,39 +30,39 @@ export default function Navbar() {
   return (
     <nav
       className={cn(
-        'bg-muted/50 font-bold border-b border-border rounded-full fixed top-0 left-1/2 transform -translate-x-1/2 z-10 backdrop-blur-sm w-fit mx-auto mt-4 transition-all duration-300',
+        'bg-muted/50 font-bold shadow-2xl rounded-full fixed top-0 left-1/2 transform -translate-x-1/2 z-10 backdrop-blur-sm w-fit mx-auto mt-4 transition-all duration-300',
         isMounted
           ? 'opacity-100 translate-y-0'
           : 'opacity-0 -translate-y-10 pointer-events-none'
       )}
     >
       <div className="container mx-auto px-4">
-        <div className="flex justify-center gap-8 py-4 text-primary">
+        <div className="flex justify-center gap-12 py-4 mx-4 my-2 text-primary">
           {pathname !== '/' && (
-            <Link
-              href="/"
-              className="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-accent transition-colors"
-            >
+            <Link href="/" className="flex items-center gap-2 relative group">
               <Home className="w-4 h-4" />
               Home
+              <div className="absolute mt-6 left-1/2 w-0 h-0.5 bg-primary transform -translate-x-1/2 transition-all duration-300 ease-out group-hover:w-full"></div>
             </Link>
           )}
           {pathname !== '/articles' && (
             <Link
               href="/articles"
-              className="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-accent transition-colors"
+              className="flex items-center gap-2 relative group"
             >
               <FileText className="w-4 h-4" />
               Articles
+              <div className="absolute mt-6 left-1/2 w-0 h-0.5 bg-primary transform -translate-x-1/2 transition-all duration-300 ease-out group-hover:w-full"></div>
             </Link>
           )}
           {pathname !== '/projects' && (
             <Link
               href="/projects"
-              className="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-accent transition-colors"
+              className="flex items-center gap-2 relative group"
             >
               <Code className="w-4 h-4" />
               Projects
+              <div className="absolute mt-6 left-1/2 w-0 h-0.5 bg-primary transform -translate-x-1/2 transition-all duration-300 ease-out group-hover:w-full"></div>
             </Link>
           )}
         </div>
