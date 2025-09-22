@@ -1,7 +1,10 @@
 import ProjectCard from '@/components/projectCard';
 import codeImage from '../../../public/code.jpeg';
+import { getAllProjects } from '@/utils/getAllProjects';
 
 export default function ProjectsPage() {
+  const projects = getAllProjects();
+
   return (
     <div className="bg-gradient-to-b from-background to-primary/25 min-h-screen">
       <div className="container mx-auto px-4 pt-16 pb-24">
@@ -16,27 +19,17 @@ export default function ProjectsPage() {
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <ProjectCard
-            href="/projects/ecommerce-platform"
-            title="E-commerce Platform"
-            description="Full-stack e-commerce solution with React, Node.js, and PostgreSQL. Features include payment processing, inventory management, and admin dashboard."
-            tags={['React', 'Node.js', 'PostgreSQL']}
-            image={codeImage}
-          />
-          <ProjectCard
-            href="/projects/task-management"
-            title="Task Management App"
-            description="Collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features."
-            tags={['Next.js', 'WebSocket', 'Prisma']}
-            image={codeImage}
-          />
-          <ProjectCard
-            href="/projects/analytics-dashboard"
-            title="Analytics Dashboard"
-            description="Real-time analytics dashboard with interactive charts, data visualization, and customizable reporting features."
-            tags={['Vue.js', 'D3.js', 'MongoDB']}
-            image={codeImage}
-          />
+          {projects.map((project) => (
+            <ProjectCard
+              key={project.slug}
+              href={`/projects/${project.slug}`}
+              title={project.title}
+              description={project.description}
+              tags={project.tags}
+              image={`/${project.image}`}
+              date="2023.01.01"
+            />
+          ))}
         </div>
       </div>
     </div>

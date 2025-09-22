@@ -19,6 +19,8 @@ export default function ProjectCard({
         <Image
           src={image}
           alt={title}
+          width={500}
+          height={200}
           className="aspect-video w-full object-cover"
         />
       )}
