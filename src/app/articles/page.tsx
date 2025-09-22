@@ -1,11 +1,11 @@
 import ArticleCard from '@/components/articleCard';
 
-export default function page() {
+export default function ArticlesPage() {
   return (
-    <div className="bg-gradient-to-b from-background to-muted/30 min-h-screen pb-16">
+    <div className="bg-gradient-to-b from-background to-primary/25 min-h-screen">
       <div className="container mx-auto px-4 pt-16 pb-24">
         <div className="mb-12 text-center">
-          <h1 className="text-5xl font-extrabold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/70">
+          <h1 className="text-5xl font-extrabold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/70 pb-2">
             Articles
           </h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
