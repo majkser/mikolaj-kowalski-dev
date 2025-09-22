@@ -16,10 +16,8 @@ export function getAllArticles(): ArticleMeta[] {
     const fullPath = path.join(articlesDirectory, fileName);
     const fileContents = fs.readFileSync(fullPath, 'utf8');
 
-    // Use gray-matter to parse the post metadata section
     const { data } = matter(fileContents);
 
-    // Combine the data with the slug
     return {
       slug,
       ...(data as Omit<ArticleMeta, 'slug'>),
