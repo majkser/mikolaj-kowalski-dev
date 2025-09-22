@@ -1,6 +1,9 @@
 import ArticleCard from '@/components/articleCard';
+import { getAllArticles } from '../../utils/getAllArticles';
 
 export default function ArticlesPage() {
+  const articles = getAllArticles();
+
   return (
     <div className="bg-gradient-to-b from-background to-primary/25 min-h-screen">
       <div className="container mx-auto px-4 pt-16 pb-24">
@@ -14,30 +17,16 @@ export default function ArticlesPage() {
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <ArticleCard
-            href="/articles/modern-react-patterns"
-            title="Modern React Patterns for Scalable Applications"
-            description="Exploring advanced React patterns including compound components, render props, and custom hooks for building maintainable UIs."
-            tags={['React', 'TypeScript', 'Architecture']}
-          />
-          <ArticleCard
-            href="/articles/database-optimization"
-            title="Database Optimization Techniques for High-Traffic Apps"
-            description="Deep dive into indexing strategies, query optimization, and caching mechanisms for improved database performance."
-            tags={['PostgreSQL', 'Performance', 'Backend']}
-          />
-          <ArticleCard
-            href="/articles/ai-integration"
-            title="Integrating AI into Web Applications: A Practical Guide"
-            description="Step-by-step guide to incorporating machine learning models and AI APIs into modern web applications."
-            tags={['AI/ML', 'APIs', 'Integration']}
-          />
-          <ArticleCard
-            href="/articles/secure-authentication"
-            title="Building Secure Authentication Systems with OAuth2 and JWT"
-            description="Comprehensive overview of implementing secure authentication using OAuth2 and JSON Web Tokens in web applications."
-            tags={['Security', 'OAuth2', 'JWT']}
-          />
+          {articles.map((article) => (
+            <ArticleCard
+              key={article.slug}
+              href={`/articles/${article.slug}`}
+              title={article.title}
+              description={article.description}
+              tags={article.tags}
+              date={article.date}
+            />
+          ))}
         </div>
       </div>
     </div>
