@@ -12,7 +12,7 @@ export default function Footer() {
           <div className="flex gap-8">
             <div className="relative group">
               <Link
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/miko%C5%82aj-kowalski-ab1b1531a/"
                 target="_blank"
                 className="flex items-center justify-center w-10 h-10 rounded-full bg-background/80 hover:bg-primary/20 transition-all duration-300"
               >
@@ -21,7 +21,7 @@ export default function Footer() {
             </div>
             <div className="relative group">
               <Link
-                href="https://github.com"
+                href="https://github.com/majkser"
                 target="_blank"
                 className="flex items-center justify-center w-10 h-10 rounded-full bg-background/80 hover:bg-primary/20 transition-all duration-300"
               >
@@ -30,7 +30,7 @@ export default function Footer() {
             </div>
             <div className="relative group">
               <Link
-                href="mailto:john@example.com"
+                href="mailto:mikser.kowalski@gmail.com"
                 className="flex items-center justify-center w-10 h-10 rounded-full bg-background/80 hover:bg-primary/20 transition-all duration-300"
               >
                 <Mail className="w-5 h-5 group-hover:text-primary group-hover:scale-110 transition-transform" />
