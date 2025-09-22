@@ -3,6 +3,7 @@ import { Badge } from './ui/badge';
 import { ExternalLink } from 'lucide-react';
 import Link from 'next/link';
 import Image, { StaticImageData } from 'next/image';
+import { CardProps } from '@/types/card';
 
 export default function ProjectCard({
   href,
@@ -10,26 +11,24 @@ export default function ProjectCard({
   description,
   tags,
   image,
-}: {
-  href: string;
-  title: string;
-  description: string;
-  tags: string[];
-  image: StaticImageData;
-}) {
+  date,
+}: CardProps) {
   return (
     <Card className="hover:shadow-lg transition-shadow p-0 pb-6">
-      <Image
-        src={image}
-        alt={title}
-        className="aspect-video w-full object-cover"
-      />
+      {image && (
+        <Image
+          src={image}
+          alt={title}
+          className="aspect-video w-full object-cover"
+        />
+      )}
       <CardHeader>
         <div className="flex items-start justify-between">
           <div className="space-y-2">
             <CardTitle className="text-xl hover:text-primary transition-colors">
               <Link href={href}>{title}</Link>
             </CardTitle>
+            <p className="text-sm text-muted-foreground">{date}</p>
             <CardDescription>{description}</CardDescription>
           </div>
           <ExternalLink className="w-4 h-4 text-muted-foreground flex-shrink-0 mt-1" />

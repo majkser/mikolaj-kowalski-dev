@@ -7,18 +7,15 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import { ExternalLink } from 'lucide-react';
+import { CardProps } from '@/types/card';
 
 export default function ArticleCard({
   href,
   title,
   description,
   tags,
-}: {
-  href: string;
-  title: string;
-  description: string;
-  tags: string[];
-}) {
+  date,
+}: CardProps) {
   return (
     <Card className="hover:shadow-lg transition-shadow">
       <CardHeader>
@@ -27,6 +24,7 @@ export default function ArticleCard({
             <CardTitle className="text-xl hover:text-primary transition-colors">
               <Link href={href}>{title}</Link>
             </CardTitle>
+            <p className="text-sm text-muted-foreground">{date}</p>
             <CardDescription>{description}</CardDescription>
           </div>
           <ExternalLink className="w-4 h-4 text-muted-foreground flex-shrink-0 mt-1" />
