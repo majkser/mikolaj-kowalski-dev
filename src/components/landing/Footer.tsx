@@ -3,33 +3,39 @@ import Link from 'next/link';
 
 export default function Footer() {
   return (
-    <footer className="bg-muted/30 border-t border-border">
-      <div className="container mx-auto px-4 py-8">
-        <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-muted-foreground">
-            © 2024 John Developer. Built with Next.js and Tailwind CSS.
-          </p>
-          <div className="flex gap-4">
-            <Link
-              href="mailto:john@example.com"
-              className="text-muted-foreground hover:text-foreground transition-colors"
-            >
-              <Mail className="w-5 h-5" />
-            </Link>
-            <Link
-              href="https://github.com"
-              target="_blank"
-              className="text-muted-foreground hover:text-foreground transition-colors"
-            >
-              <Github className="w-5 h-5" />
-            </Link>
-            <Link
-              href="https://linkedin.com"
-              target="_blank"
-              className="text-muted-foreground hover:text-foreground transition-colors"
-            >
-              <Linkedin className="w-5 h-5" />
-            </Link>
+    <footer className="bg-gradient-to-r from-muted/40 to-muted/20 border-t border-border relative">
+      <div className="container mx-auto px-4 py-12 text-center text-foreground">
+        <div className="flex justify-around items-center flex-col md:flex-row gap-6">
+          <h3 className="text-lg font-semibold mb-2">
+            © 2025 Mikołaj Kowalski. All rights reserved.
+          </h3>
+          <div className="flex gap-8">
+            <div className="relative group">
+              <Link
+                href="https://linkedin.com"
+                target="_blank"
+                className="flex items-center justify-center w-10 h-10 rounded-full bg-background/80 hover:bg-primary/20 transition-all duration-300"
+              >
+                <Linkedin className="w-5 h-5 group-hover:text-primary group-hover:scale-110 transition-transform" />
+              </Link>
+            </div>
+            <div className="relative group">
+              <Link
+                href="https://github.com"
+                target="_blank"
+                className="flex items-center justify-center w-10 h-10 rounded-full bg-background/80 hover:bg-primary/20 transition-all duration-300"
+              >
+                <Github className="w-5 h-5 group-hover:text-primary group-hover:scale-110 transition-transform" />
+              </Link>
+            </div>
+            <div className="relative group">
+              <Link
+                href="mailto:john@example.com"
+                className="flex items-center justify-center w-10 h-10 rounded-full bg-background/80 hover:bg-primary/20 transition-all duration-300"
+              >
+                <Mail className="w-5 h-5 group-hover:text-primary group-hover:scale-110 transition-transform" />
+              </Link>
+            </div>
           </div>
         </div>
       </div>
