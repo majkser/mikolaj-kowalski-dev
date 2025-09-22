@@ -1,5 +1,4 @@
 import ProjectCard from '@/components/projectCard';
-import codeImage from '../../../public/code.jpeg';
 import { getAllProjects } from '@/utils/getAllProjects';
 
 export default function ProjectsPage() {

@@ -2,8 +2,13 @@ import { Button } from '@/components/ui/button';
 import ArticleCard from '@/components/articleCard';
 import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
+import { getAllArticles } from '../../utils/getAllArticles';
 
 export default function FeaturedArticles() {
+  const allArticles = getAllArticles();
+
+  //limit to the 5 articles displayed on the main page
+  const articles = allArticles.slice(0, 5);
   return (
     <section className="space-y-6">
       <div className="flex items-center justify-between">
@@ -17,25 +22,17 @@ export default function FeaturedArticles() {
           </Link>
         </Button>
       </div>
-      <div className="space-y-4">
-        <ArticleCard
-          href="/articles/modern-react-patterns"
-          title="Modern React Patterns for Scalable Applications"
-          description="Exploring advanced React patterns including compound components, render props, and custom hooks for building maintainable UIs."
-          tags={['React', 'TypeScript', 'Architecture']}
-        />
-        <ArticleCard
-          href="/articles/modern-react-patterns"
-          title="Modern React Patterns for Scalable Applications"
-          description="Exploring advanced React patterns including compound components, render props, and custom hooks for building maintainable UIs."
-          tags={['React', 'TypeScript', 'Architecture']}
-        />
-        <ArticleCard
-          href="/articles/modern-react-patterns"
-          title="Modern React Patterns for Scalable Applications"
-          description="Exploring advanced React patterns including compound components, render props, and custom hooks for building maintainable UIs."
-          tags={['React', 'TypeScript', 'Architecture']}
-        />
+      <div className="space-y-5">
+        {articles.map((article) => (
+          <ArticleCard
+            key={article.slug}
+            href={`/articles/${article.slug}`}
+            title={article.title}
+            description={article.description}
+            tags={article.tags}
+            date={article.date}
+          />
+        ))}
       </div>
     </section>
   );

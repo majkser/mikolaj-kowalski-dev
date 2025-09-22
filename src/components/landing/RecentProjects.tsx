@@ -2,9 +2,13 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 import ProjectCard from '@/components/projectCard';
 import Link from 'next/link';
-import codeImage from '../../../public/code.jpeg';
+import { getAllProjects } from '../../utils/getAllProjects';
 
 export default function RecentProjects() {
+  const allProjects = getAllProjects();
+
+  //limit to the 2 projects displayed on the main page
+  const projects = allProjects.slice(0, 2);
   return (
     <section className="space-y-6">
       <div className="flex items-center justify-between">
@@ -17,27 +21,17 @@ export default function RecentProjects() {
         </Button>
       </div>
       <div className="space-y-4">
-        <ProjectCard
-          href="/projects/ecommerce-platform"
-          title="E-commerce Platform"
-          description="Full-stack e-commerce solution with React, Node.js, and PostgreSQL. Features include payment processing, inventory management, and admin dashboard."
-          tags={['React', 'Node.js', 'PostgreSQL']}
-          image={codeImage}
-        />
-        <ProjectCard
-          href="/projects/task-management"
-          title="Task Management App"
-          description="Collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features."
-          tags={['Next.js', 'WebSocket', 'Prisma']}
-          image={codeImage}
-        />
-        <ProjectCard
-          href="/projects/analytics-dashboard"
-          title="Analytics Dashboard"
-          description="Real-time analytics dashboard with interactive charts, data visualization, and customizable reporting features."
-          tags={['Vue.js', 'D3.js', 'MongoDB']}
-          image={codeImage}
-        />
+        {projects.map((project) => (
+          <ProjectCard
+            key={project.slug}
+            href={`/projects/${project.slug}`}
+            title={project.title}
+            description={project.description}
+            tags={project.tags}
+            image={`/${project.image}`}
+            date="2023.01.01"
+          />
+        ))}
       </div>
     </section>
   );
