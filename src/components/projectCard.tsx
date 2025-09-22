@@ -18,7 +18,7 @@ export default function ProjectCard({
   image: StaticImageData;
 }) {
   return (
-    <Card className="hover:shadow-lg transition-shadow">
+    <Card className="hover:shadow-lg transition-shadow p-0 pb-6">
       <Image
         src={image}
         alt={title}
