@@ -5,26 +5,12 @@ import matter from 'gray-matter';
 import { Badge } from '@/components/ui/badge';
 import { notFound } from 'next/navigation';
 
-// Get all article slugs for static generation
-export async function generateStaticParams() {
-  const files = fs.readdirSync(
-    path.join(process.cwd(), 'src/content/articles')
-  );
-
-  return files.map((filename) => ({
-    slug: filename.replace('.mdx', ''),
-  }));
-}
-
-// Article page component
 export default async function ArticlePage({
   params,
 }: {
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-
-  console.log('slug: ', slug);
 
   // Read the MDX file
   const filePath = path.join(
