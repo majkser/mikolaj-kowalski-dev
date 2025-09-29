@@ -34,20 +34,25 @@ export default function HeroSection() {
                 </Link>
               </Button>
             </div>
-            <div className="flex gap-12 items-center justify-center lg:justify-start">
-              <Button variant="ghost" size="sm" className="scale-175" asChild>
-                <Link href="https://github.com/majkser" target="_blank">
-                  <Github className="w-5 h-5" />
-                </Link>
-              </Button>
-              <Button variant="ghost" size="sm" className="scale-175" asChild>
+            <div className="flex gap-12 lg:gap-8 items-center justify-center lg:justify-start">
+              <div className="relative group">
                 <Link
-                  href="https://www.linkedin.com/in/miko%C5%82aj-kowalski-ab1b1531a"
+                  href="https://github.com/majkser"
                   target="_blank"
+                  className="flex items-center justify-center w-12 h-12 rounded-full bg-background/80 group-hover:bg-primary/20 transition-all duration-300"
                 >
-                  <Linkedin className="w-5 h-5" />
+                  <Github className="w-6 h-6 group-hover:text-primary group-hover:scale-110 transition-all duration-300" />
                 </Link>
-              </Button>
+              </div>
+              <div className="relative group">
+                <Link
+                  href="https://www.linkedin.com/in/miko%C5%82aj-kowalski-ab1b1531a/"
+                  target="_blank"
+                  className="flex items-center justify-center w-12 h-12 rounded-full bg-background/80 group-hover:bg-primary/20 transition-all duration-300"
+                >
+                  <Linkedin className="w-6 h-6 group-hover:text-primary group-hover:scale-110 transition-all duration-300" />
+                </Link>
+              </div>
             </div>
           </div>
           <PhotoAndStats />
