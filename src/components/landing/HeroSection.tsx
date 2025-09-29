@@ -22,7 +22,7 @@ export default function HeroSection() {
             </div>
             <div className="flex flex-wrap gap-4 items-center justify-center lg:justify-start">
               <Button size="lg" asChild>
-                <Link href="mailto:john@example.com">
+                <Link href="mailto:mikser.kowalski@gmail.com">
                   <Mail className="w-4 h-4 mr-2" />
                   Get In Touch
                 </Link>
