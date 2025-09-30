@@ -4,6 +4,7 @@ import { MDXRemote } from 'next-mdx-remote/rsc';
 import matter from 'gray-matter';
 import { Badge } from '@/components/ui/badge';
 import { notFound } from 'next/navigation';
+import { CodeViewer } from '@/components/codeViewer';
 
 export default async function ArticlePage({
   params,
@@ -50,7 +51,7 @@ export default async function ArticlePage({
         )}
 
         <div className="mt-8">
-          <MDXRemote source={content} />
+          <MDXRemote source={content} components={{ CodeViewer }} />
         </div>
       </article>
     </div>
