@@ -17,26 +17,28 @@ export default function ArticleCard({
   date,
 }: CardProps) {
   return (
-    <Card className="hover:shadow-lg transition-shadow">
-      <CardHeader>
-        <div className="flex items-start justify-between">
-          <div className="space-y-2">
-            <CardTitle className="text-xl hover:text-primary transition-colors">
-              <Link href={href}>{title}</Link>
-            </CardTitle>
-            <p className="text-sm text-muted-foreground">{date}</p>
-            <CardDescription>{description}</CardDescription>
+    <Link href={href}>
+      <Card className="hover:shadow-lg transition-shadow my-5">
+        <CardHeader>
+          <div className="flex items-start justify-between">
+            <div className="space-y-2">
+              <CardTitle className="text-xl hover:text-primary transition-colors">
+                {title}
+              </CardTitle>
+              <p className="text-sm text-muted-foreground">{date}</p>
+              <CardDescription>{description}</CardDescription>
+            </div>
+            <ExternalLink className="w-4 h-4 text-muted-foreground flex-shrink-0 mt-1" />
           </div>
-          <ExternalLink className="w-4 h-4 text-muted-foreground flex-shrink-0 mt-1" />
-        </div>
-        <div className="flex gap-2 pt-2">
-          {tags.map((tag) => (
-            <Badge key={tag} variant="secondary">
-              {tag}
-            </Badge>
-          ))}
-        </div>
-      </CardHeader>
-    </Card>
+          <div className="flex gap-2 pt-2">
+            {tags.map((tag) => (
+              <Badge key={tag} variant="secondary">
+                {tag}
+              </Badge>
+            ))}
+          </div>
+        </CardHeader>
+      </Card>
+    </Link>
   );
 }

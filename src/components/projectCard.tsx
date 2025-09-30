@@ -14,35 +14,37 @@ export default function ProjectCard({
   date,
 }: CardProps) {
   return (
-    <Card className="hover:shadow-lg transition-shadow p-0 pb-6">
-      {image && (
-        <Image
-          src={image}
-          alt={title}
-          width={500}
-          height={200}
-          className="aspect-video w-full object-cover"
-        />
-      )}
-      <CardHeader>
-        <div className="flex items-start justify-between">
-          <div className="space-y-2">
-            <CardTitle className="text-xl hover:text-primary transition-colors">
-              <Link href={href}>{title}</Link>
-            </CardTitle>
-            <p className="text-sm text-muted-foreground">{date}</p>
-            <CardDescription>{description}</CardDescription>
+    <Link href={href}>
+      <Card className="hover:shadow-lg transition-shadow p-0 pb-6 my-5">
+        {image && (
+          <Image
+            src={image}
+            alt={title}
+            width={500}
+            height={200}
+            className="aspect-video w-full object-cover"
+          />
+        )}
+        <CardHeader>
+          <div className="flex items-start justify-between">
+            <div className="space-y-2">
+              <CardTitle className="text-xl hover:text-primary transition-colors">
+                {title}
+              </CardTitle>
+              <p className="text-sm text-muted-foreground">{date}</p>
+              <CardDescription>{description}</CardDescription>
+            </div>
+            <ExternalLink className="w-4 h-4 text-muted-foreground flex-shrink-0 mt-1" />
           </div>
-          <ExternalLink className="w-4 h-4 text-muted-foreground flex-shrink-0 mt-1" />
-        </div>
-        <div className="flex gap-2 pt-2">
-          {tags.map((tag) => (
-            <Badge key={tag} variant="secondary">
-              {tag}
-            </Badge>
-          ))}
-        </div>
-      </CardHeader>
-    </Card>
+          <div className="flex gap-2 pt-2">
+            {tags.map((tag) => (
+              <Badge key={tag} variant="secondary">
+                {tag}
+              </Badge>
+            ))}
+          </div>
+        </CardHeader>
+      </Card>
+    </Link>
   );
 }
