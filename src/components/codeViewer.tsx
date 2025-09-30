@@ -1,10 +1,12 @@
 'use client';
 
-import React from 'react';
+import { useState } from 'react';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
-import { Copy } from 'lucide-react';
+import { Copy, CheckCircle2Icon } from 'lucide-react';
 import { CodeViewerProps } from '@/types/codeViewer';
+import { Alert, AlertTitle } from '@/components/ui/alert';
+import { cn } from '@/lib/utils';
 
 export function CodeViewer({
   code,
@@ -12,6 +14,15 @@ export function CodeViewer({
   fileName,
   showLineNumbers = true,
 }: CodeViewerProps) {
+  const [copiedAlertOpen, setCopiedAlertOpen] = useState(false);
+
+  function handleCopyClick() {
+    navigator.clipboard.writeText(code);
+    setCopiedAlertOpen(true);
+
+    setTimeout(() => setCopiedAlertOpen(false), 2000);
+  }
+
   return (
     <div className="rounded-md overflow-hidden border border-border my-4">
       {fileName && (
@@ -21,14 +32,23 @@ export function CodeViewer({
           </span>
           <button
             className="hover:cursor-pointer"
-            onClick={() => {
-              navigator.clipboard.writeText(code);
-            }}
+            onClick={() => handleCopyClick()}
           >
-            <Copy className="h-4 w-4 text-secondary-foreground/50 hover:text-secondary-foreground/75 hover:scale-105" />
+            <Copy className="h-4 w-4 text-secondary-foreground/50 hover:text-secondary-foreground/75 hover:scale-105 transition-all duration-300" />
           </button>
         </div>
       )}
+      <Alert
+        className={cn(
+          'absolute bottom-8 left-4 m-4 w-44 flex items-center justify-around transition-all duration-500',
+          copiedAlertOpen
+            ? 'opacity-100 translate-y-0'
+            : 'opacity-0 translate-y-8'
+        )}
+      >
+        <CheckCircle2Icon className="h-4 w-4 text-secondary-foreground/50" />
+        <AlertTitle>Copied to clipboard!</AlertTitle>
+      </Alert>
       <div className="overflow-auto">
         <SyntaxHighlighter
           language={language}
