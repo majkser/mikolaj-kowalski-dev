@@ -4,7 +4,7 @@ import { MDXRemote } from 'next-mdx-remote/rsc';
 import matter from 'gray-matter';
 import { Badge } from '@/components/ui/badge';
 import { notFound } from 'next/navigation';
-import { CodeViewer } from '@/components/codeViewer';
+import { CodeViewer } from '@/components/mdxComponents/codeViewer';
 
 export default async function ArticlePage({
   params,
