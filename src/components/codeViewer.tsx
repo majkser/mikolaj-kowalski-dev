@@ -4,13 +4,7 @@ import React from 'react';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import { Copy } from 'lucide-react';
-
-interface CodeViewerProps {
-  code: string;
-  language: string; // Supports many languages: js, ts, python, java, ruby, c, cpp, go, rust, etc.
-  fileName?: string;
-  showLineNumbers?: boolean;
-}
+import { CodeViewerProps } from '@/types/codeViewer';
 
 export function CodeViewer({
   code,
