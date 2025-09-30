@@ -14,7 +14,7 @@ export default function RecentProjects() {
       <div className="flex items-center justify-between">
         <h2 className="text-3xl font-bold text-foreground">Recent Projects</h2>
         <Button variant="ghost" asChild>
-          <Link href="/projects" className="text-primary hover:text-primary/80">
+          <Link href="/projects" className="text-primary">
             View All
             <ArrowRight className="w-4 h-4 ml-2" />
           </Link>

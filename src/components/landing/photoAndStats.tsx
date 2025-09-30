@@ -16,18 +16,9 @@ export default function PhotoAndStats() {
             <div className="absolute inset-0 rounded-xl border-4 border-transparent group-hover:border-primary/70 transition-all duration-300"></div>
           </div>
         </div>
-
-        {/* Floating Stats Cards */}
-        <div className="absolute -bottom-4 -left-4 bg-card border border-border rounded-lg p-4 shadow-lg">
-          <div className="text-center">
-            <div className="text-2xl font-bold text-primary">50+</div>
-            <div className="text-xs text-muted-foreground">Projects</div>
-          </div>
-        </div>
-
         <div className="absolute -top-4 -right-4 bg-card border border-border rounded-lg p-4 shadow-lg">
           <div className="text-center">
-            <div className="text-2xl font-bold text-primary">3+</div>
+            <div className="text-2xl font-bold text-primary">2+</div>
             <div className="text-xs text-muted-foreground">Years Exp</div>
           </div>
         </div>

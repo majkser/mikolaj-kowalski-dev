@@ -15,9 +15,9 @@ export default function HeroSection() {
                 Hi, I'm <span className="text-primary">Mikołaj Kowalski</span>
               </h1>
               <p className="text-xl text-muted-foreground leading-relaxed max-w-lg">
-                Full-stack developer crafting elegant solutions with modern
-                technologies. Passionate about clean code, user experience, and
-                continuous learning.
+                Full-stack software developer crafting elegant solutions with
+                modern frameworks and technologies like Node.js, Next.js, React,
+                Angular and Spring Boot.
               </p>
             </div>
             <div className="flex flex-wrap gap-4 items-center justify-center lg:justify-start">

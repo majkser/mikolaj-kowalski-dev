@@ -16,7 +16,7 @@ export default function CallToAction() {
         </p>
         <div className="flex justify-center gap-4">
           <Button size="lg" asChild>
-            <Link href="mailto:john@example.com">
+            <Link href="mailto:mikser.kowalski@gmail.com">
               Get In Touch
               <ArrowRight className="w-4 h-4 ml-2" />
             </Link>

@@ -16,7 +16,7 @@ export default function FeaturedArticles() {
           Featured Articles
         </h2>
         <Button variant="ghost" asChild>
-          <Link href="/articles" className="text-primary hover:text-primary/80">
+          <Link href="/articles" className="text-primary">
             View All
             <ArrowRight className="w-4 h-4 ml-2" />
           </Link>
