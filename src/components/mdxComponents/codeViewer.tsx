@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import { Copy, CheckCircle2Icon } from 'lucide-react';
-import { CodeViewerProps } from '@/types/codeViewer';
+import { CodeViewerProps } from '@/types/mdxTypes';
 import { Alert, AlertTitle } from '@/components/ui/alert';
 import { cn } from '@/lib/utils';
 

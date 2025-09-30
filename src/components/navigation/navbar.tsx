@@ -37,7 +37,7 @@ export default function Navbar() {
       )}
     >
       <div className="container mx-auto px-4">
-        <div className="flex justify-center gap-12 py-4 mx-4 my-2 text-primary">
+        <div className="flex justify-center gap-4 md:gap-12 py-4 mx-4 my-2 text-primary">
           {pathname !== '/' && (
             <Link href="/" className="flex items-center gap-2 relative group">
               <Home className="w-4 h-4" />

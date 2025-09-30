@@ -4,3 +4,11 @@ export interface CodeViewerProps {
   fileName?: string;
   showLineNumbers?: boolean;
 }
+
+export interface MdxImageProps {
+  src: string;
+  alt: string;
+  width?: number;
+  height?: number;
+  className?: string;
+}

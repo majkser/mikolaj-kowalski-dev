@@ -1,6 +1,6 @@
 ---
 title: 'Modern React Patterns for Scalable Applications'
-date: '2023.06.15'
+date: '2025.11.15'
 description: 'Exploring advanced React patterns including compound components, render props, and custom hooks for building maintainable UIs.'
 tags: ['React', 'TypeScript', 'Architecture']
 ---
@@ -13,28 +13,13 @@ React has evolved significantly since its inception, and with it, many patterns 
 
 Compound components are a pattern where multiple components work together to form a cohesive API. This pattern is particularly useful for creating flexible UI components.
 
-<CodeViewer
-  code={`<Menu>
-      <MenuButton>Actions</MenuButton>
-      <MenuList>
-        <MenuItem>Download</MenuItem>
-        <MenuItem>Create a Copy</MenuItem>
-        <MenuItem>Delete</MenuItem>
-      </MenuList>
-  </Menu>`}
-  language="tsx"
-  fileName="testName.tsx"
-/>
-
-<CodeViewer
-  code={`<Menu>
-      <MenuButton>Actions</MenuButton>
-      <MenuList>
-        <MenuItem>Download</MenuItem>
-        <MenuItem>Create a Copy</MenuItem>
-        <MenuItem>Delete</MenuItem>
-      </MenuList>
-  </Menu>`}
-  language="tsx"
-  fileName="testName.tsx"
-/>
+```jsx
+<Menu>
+  <MenuButton>Actions</MenuButton>
+  <MenuList>
+    <MenuItem>Download</MenuItem>
+    <MenuItem>Create a Copy</MenuItem>
+    <MenuItem>Delete</MenuItem>
+  </MenuList>
+</Menu>
+```
