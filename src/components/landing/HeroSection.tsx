@@ -28,7 +28,11 @@ export default function HeroSection() {
                 </Link>
               </Button>
               <Button variant="outline" size="lg" asChild>
-                <Link href="/cv.pdf" target="_blank">
+                <Link
+                  href="/CV Mikołaj Kowalski.pdf"
+                  target="_blank"
+                  download="CV_Mikolaj_Kowalski.pdf"
+                >
                   <Download className="w-4 h-4 mr-2" />
                   Download CV
                 </Link>
