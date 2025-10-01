@@ -5,6 +5,10 @@ import matter from 'gray-matter';
 import { Badge } from '@/components/ui/badge';
 import { notFound } from 'next/navigation';
 import { MdxImage } from '@/components/mdxComponents/mdxImage';
+import { Header } from '@/components/mdxComponents/header';
+import { FeaturesGrid } from '@/components/mdxComponents/featuresGrid';
+import { ProjectCTA } from '@/components/mdxComponents/projectCTA';
+import { InfoBox } from '@/components/mdxComponents/infoBox';
 
 export default async function ProjectPage({
   params,
@@ -47,7 +51,10 @@ export default async function ProjectPage({
         )}
 
         <div className="mt-8">
-          <MDXRemote source={content} components={{ MdxImage }} />
+          <MDXRemote
+            source={content}
+            components={{ MdxImage, Header, FeaturesGrid, ProjectCTA, InfoBox }}
+          />
         </div>
       </article>
     </div>

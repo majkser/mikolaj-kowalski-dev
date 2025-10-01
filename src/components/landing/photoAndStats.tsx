@@ -18,7 +18,7 @@ export default function PhotoAndStats() {
         </div>
         <div className="absolute -top-4 -right-4 bg-card border border-border rounded-lg p-4 shadow-lg">
           <div className="text-center">
-            <div className="text-2xl font-bold text-primary">2+</div>
+            <div className="text-2xl font-bold text-primary">1+</div>
             <div className="text-xs text-muted-foreground">Years Exp</div>
           </div>
         </div>
