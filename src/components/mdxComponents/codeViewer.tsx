@@ -40,7 +40,7 @@ export function CodeViewer({
       )}
       <Alert
         className={cn(
-          'absolute bottom-8 left-4 m-4 w-44 flex items-center justify-around transition-all duration-500',
+          'fixed bottom-8 left-4 m-4 w-44 flex items-center justify-around transition-all duration-500',
           copiedAlertOpen
             ? 'opacity-100 translate-y-0'
             : 'opacity-0 translate-y-8'
