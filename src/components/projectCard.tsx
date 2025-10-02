@@ -2,7 +2,7 @@ import { Card, CardHeader, CardTitle, CardDescription } from './ui/card';
 import { Badge } from './ui/badge';
 import { ExternalLink } from 'lucide-react';
 import Link from 'next/link';
-import Image, { StaticImageData } from 'next/image';
+import Image from 'next/image';
 import { CardProps } from '@/types/card';
 
 export default function ProjectCard({

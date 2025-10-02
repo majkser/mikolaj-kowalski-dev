@@ -16,7 +16,7 @@ export function MdxImage({
         alt={alt}
         width={width || 800}
         height={height || 450}
-        className="rounded-lg"
+        className="mx-auto w-full h-auto"
       />
     </div>
   );

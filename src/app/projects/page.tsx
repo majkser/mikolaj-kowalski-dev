@@ -26,7 +26,7 @@ export default function ProjectsPage() {
               description={project.description}
               tags={project.tags}
               image={`/${project.image}`}
-              date="2023.01.01"
+              date={project.date}
             />
           ))}
         </div>
