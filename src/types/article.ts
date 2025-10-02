@@ -2,6 +2,6 @@ export interface ArticleMeta {
   slug: string;
   title: string;
   date: string;
-  description: string;
+  subtitle: string;
   tags: string[];
 }

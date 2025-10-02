@@ -12,7 +12,7 @@ import { CardProps } from '@/types/card';
 export default function ArticleCard({
   href,
   title,
-  description,
+  subtitle,
   tags,
   date,
 }: CardProps) {
@@ -26,7 +26,7 @@ export default function ArticleCard({
                 {title}
               </CardTitle>
               <p className="text-sm text-muted-foreground">{date}</p>
-              <CardDescription>{description}</CardDescription>
+              <CardDescription>{subtitle}</CardDescription>
             </div>
             <ExternalLink className="w-4 h-4 text-muted-foreground flex-shrink-0 mt-1" />
           </div>
