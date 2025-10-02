@@ -1,14 +1,6 @@
-type Feature = {
-  icon: string;
-  title: string;
-  description: string;
-};
+import { Feature } from '@/types/mdxTypes';
 
-type FeatureGridProps = {
-  features: Feature[];
-};
-
-export function FeaturesGrid({ features }: FeatureGridProps) {
+export function FeaturesGrid({ features }: { features: Feature[] }) {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 my-8">
       {features.map((feature, index) => (

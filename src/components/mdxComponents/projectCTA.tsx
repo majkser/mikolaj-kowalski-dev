@@ -1,7 +1,4 @@
-type ProjectCTAProps = {
-  url: string;
-  label: string;
-};
+import { ProjectCTAProps } from '@/types/mdxTypes';
 
 export function ProjectCTA({ url, label }: ProjectCTAProps) {
   return (

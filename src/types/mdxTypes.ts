@@ -12,3 +12,14 @@ export interface MdxImageProps {
   height?: number;
   className?: string;
 }
+
+export interface ProjectCTAProps {
+  url: string;
+  label: string;
+}
+
+export interface Feature {
+  icon: string;
+  title: string;
+  description: string;
+}
