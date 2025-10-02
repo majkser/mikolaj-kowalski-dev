@@ -23,7 +23,7 @@ export default function ProjectsPage() {
               key={project.slug}
               href={`/projects/${project.slug}`}
               title={project.title}
-              description={project.description}
+              subtitle={project.subtitle}
               tags={project.tags}
               image={`/${project.image}`}
               date={project.date}
