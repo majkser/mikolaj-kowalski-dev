@@ -28,7 +28,7 @@ export default function FeaturedArticles() {
             key={article.slug}
             href={`/articles/${article.slug}`}
             title={article.title}
-            description={article.description}
+            subtitle={article.subtitle}
             tags={article.tags}
             date={article.date}
           />

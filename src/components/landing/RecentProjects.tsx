@@ -26,7 +26,7 @@ export default function RecentProjects() {
             key={project.slug}
             href={`/projects/${project.slug}`}
             title={project.title}
-            description={project.description}
+            subtitle={project.subtitle}
             tags={project.tags}
             image={`/${project.image}`}
             date="2023.01.01"
