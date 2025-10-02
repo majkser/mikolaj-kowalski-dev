@@ -29,7 +29,7 @@ export default function RecentProjects() {
             subtitle={project.subtitle}
             tags={project.tags}
             image={`/${project.image}`}
-            date="2023.01.01"
+            date={project.date}
           />
         ))}
       </div>
