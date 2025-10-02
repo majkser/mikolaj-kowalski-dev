@@ -1,0 +1,51 @@
+---
+title: 'myMovie'
+subtitle: 'A perfect website to discover and rate great movies'
+date: '2024.12.12'
+tags: ['JavaScript', 'React', 'OMDb API', 'tailwind.css']
+image: my-movie.webp
+---
+
+This was my first project involving data fetching, built using **React** and the **OMDb API**. The app allows users to search for specific movies, preview their details, read descriptions, check ratings, watch trailers, and even rate the movies themselves. User ratings are stored locally using **localStorage**, making it easy to keep track of your favorites.
+
+The main page loads a selection of random movies from the top 200 best movies, making it a great starting point for discovering something new to watch. Whether you're looking for a blockbuster or a hidden gem, this app has you covered!
+
+<MdxImage src="/my-movie.webp" alt="landing page of myMovie app" />
+
+## ✨ Features
+
+<FeaturesGrid
+  features={[
+    {
+      icon: '🔍',
+      title: 'Search for Movies',
+      description: 'Find movies by title and preview their details',
+    },
+    {
+      icon: '📖',
+      title: 'Movie Details',
+      description: 'Read descriptions, check ratings, and watch trailers',
+    },
+    {
+      icon: '⭐',
+      title: 'Rate Movies',
+      description: 'Rate movies and save your ratings locally',
+    },
+    {
+      icon: '🎲',
+      title: 'Random Movie Suggestions',
+      description: 'Discover random movies from the top 200 best movies',
+    },
+  ]}
+/>
+
+## 🛠️ Development Approach
+
+<InfoBox>
+    Built with **React** and powered by the **OMDb API**, this project was my first experience with fetching and managing external data.
+
+    It was a fun challenge to implement features like local storage for user ratings and random movie suggestions. While it’s not perfect, it’s a great tool for movie enthusiasts looking for their next watch!
+
+</InfoBox>
+
+<ProjectCTA url="https://majkser.github.io/myMovie" label="Explore myMovie" />
