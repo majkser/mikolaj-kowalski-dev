@@ -16,11 +16,12 @@ export function getAllArticles(): ArticleMeta[] {
     const fullPath = path.join(articlesDirectory, fileName);
     const fileContents = fs.readFileSync(fullPath, 'utf8');
 
-    const { data } = matter(fileContents);
+    const { data, content } = matter(fileContents);
 
     return {
       slug,
       ...(data as Omit<ArticleMeta, 'slug'>),
+      content,
     };
   });
 

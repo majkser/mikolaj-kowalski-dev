@@ -1,5 +1,6 @@
 import ArticleCard from '@/components/articleCard';
 import { getAllArticles } from '../../utils/getAllArticles';
+import { timeToRead } from '@/utils/timeToRead';
 
 export default function ArticlesPage() {
   const articles = getAllArticles();
@@ -25,6 +26,7 @@ export default function ArticlesPage() {
               subtitle={article.subtitle}
               tags={article.tags}
               date={article.date}
+              timeToRead={timeToRead(article.content)}
             />
           ))}
         </div>

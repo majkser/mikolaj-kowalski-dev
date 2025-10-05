@@ -7,4 +7,5 @@ export interface CardProps {
   tags: string[];
   date: string;
   image?: StaticImageData | string;
+  timeToRead?: number;
 }

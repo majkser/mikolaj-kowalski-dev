@@ -4,4 +4,5 @@ export interface ArticleMeta {
   date: string;
   subtitle: string;
   tags: string[];
+  content: string;
 }

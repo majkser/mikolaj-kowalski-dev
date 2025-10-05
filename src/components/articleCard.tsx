@@ -15,6 +15,7 @@ export default function ArticleCard({
   subtitle,
   tags,
   date,
+  timeToRead,
 }: CardProps) {
   return (
     <Link href={href}>
@@ -25,17 +26,27 @@ export default function ArticleCard({
               <CardTitle className="text-xl hover:text-primary transition-colors">
                 {title}
               </CardTitle>
-              <p className="text-sm text-muted-foreground">{date}</p>
               <CardDescription>{subtitle}</CardDescription>
+              {timeToRead && (
+                <>
+                  <p className="text-sm text-muted-foreground">
+                    ~ {timeToRead} {timeToRead === 1 ? 'minute' : 'minutes'}{' '}
+                    read
+                  </p>
+                </>
+              )}
+              <div className="flex gap-2 pt-2">
+                {tags.map((tag) => (
+                  <Badge key={tag} variant="secondary">
+                    {tag}
+                  </Badge>
+                ))}
+              </div>
+              <p className="text-sm text-muted-foreground">
+                Published on {date}
+              </p>
             </div>
             <ExternalLink className="w-4 h-4 text-muted-foreground flex-shrink-0 mt-1" />
-          </div>
-          <div className="flex gap-2 pt-2">
-            {tags.map((tag) => (
-              <Badge key={tag} variant="secondary">
-                {tag}
-              </Badge>
-            ))}
           </div>
         </CardHeader>
       </Card>

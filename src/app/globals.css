@@ -178,3 +178,38 @@ body {
   color: var(--foreground);
   font-family: Lora, serif;
 }
+
+/* MDX Content Styles */
+
+.mdx-content h3 {
+  @apply text-xl font-semibold text-primary/80 mt-6 mb-4 bg-muted/10 px-3 py-1 rounded-r-sm w-fit;
+}
+
+.mdx-content p {
+  @apply my-4 text-base leading-relaxed text-foreground/90;
+}
+
+.mdx-content ul,
+.mdx-content ol {
+  @apply my-4 ml-6 text-foreground/90;
+}
+
+.mdx-content ul {
+  @apply list-disc;
+}
+
+.mdx-content ol {
+  @apply list-decimal;
+}
+
+.mdx-content li {
+  @apply my-1 leading-relaxed;
+}
+
+.mdx-content a {
+  @apply text-primary underline decoration-dotted underline-offset-2 hover:text-primary/80 transition-colors;
+}
+
+.mdx-content code {
+  @apply font-mono text-sm bg-muted px-1.5 py-0.5 rounded-sm text-secondary-foreground;
+}

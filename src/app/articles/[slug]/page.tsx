@@ -5,6 +5,7 @@ import matter from 'gray-matter';
 import { Badge } from '@/components/ui/badge';
 import { notFound } from 'next/navigation';
 import { CodeViewer } from '@/components/mdxComponents/codeViewer';
+import { timeToRead } from '@/utils/timeToRead';
 
 export default async function ArticlePage({
   params,
@@ -31,26 +32,34 @@ export default async function ArticlePage({
   // Parse the frontmatter and content
   const { data: frontmatter, content } = matter(fileContent);
 
+  const readingTime = timeToRead(content);
+
   return (
     <div className="container mx-auto px-4 py-12 max-w-4xl">
       <article className="prose lg:prose-xl dark:prose-invert mx-auto">
-        <h1 className="text-4xl font-bold mb-6">{frontmatter.title}</h1>
-
-        <div className="flex gap-2 mb-8">
-          {frontmatter.tags?.map((tag: string) => (
-            <Badge key={tag} variant="secondary">
-              {tag}
-            </Badge>
-          ))}
-        </div>
-
-        {frontmatter.date && (
-          <p className="text-muted-foreground mb-6">
-            Published on {new Date(frontmatter.date).toLocaleDateString()}
+        <div className="mb-8 border-l-4 border-primary pl-4">
+          <h1 className="text-4xl font-bold mb-2 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+            {frontmatter.title}
+          </h1>
+          <h2 className="text-2xl mt-0 opacity-80">{frontmatter.subtitle}</h2>
+          <p className="text-muted-foreground mt-1">
+            ~ {readingTime} {readingTime === 1 ? 'minute' : 'minutes'} read
           </p>
-        )}
+          <div className="flex gap-2 mb-2 mt-4">
+            {frontmatter.tags?.map((tag: string) => (
+              <Badge key={tag} variant="secondary">
+                {tag}
+              </Badge>
+            ))}
+          </div>
 
-        <div className="mt-8">
+          {frontmatter.date && (
+            <p className="text-muted-foreground mb-6">
+              Published on {frontmatter.date}
+            </p>
+          )}
+        </div>
+        <div className="mt-8 mdx-content">
           <MDXRemote source={content} components={{ CodeViewer }} />
         </div>
       </article>
