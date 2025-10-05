@@ -1,6 +1,5 @@
-import ArticleCard from '@/components/articleCard';
 import { getAllArticles } from '../../utils/getAllArticles';
-import { timeToRead } from '@/utils/timeToRead';
+import Articles from '@/components/articles';
 
 export default function ArticlesPage() {
   const articles = getAllArticles();
@@ -18,17 +17,7 @@ export default function ArticlesPage() {
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {articles.map((article) => (
-            <ArticleCard
-              key={article.slug}
-              href={`/articles/${article.slug}`}
-              title={article.title}
-              subtitle={article.subtitle}
-              tags={article.tags}
-              date={article.date}
-              timeToRead={timeToRead(article.content)}
-            />
-          ))}
+          <Articles />
         </div>
       </div>
     </div>

@@ -42,9 +42,7 @@ export default function ArticleCard({
                   </Badge>
                 ))}
               </div>
-              <p className="text-sm text-muted-foreground">
-                Published on {date}
-              </p>
+              <p className="text-sm text-muted-foreground">{date}</p>
             </div>
             <ExternalLink className="w-4 h-4 text-muted-foreground flex-shrink-0 mt-1" />
           </div>

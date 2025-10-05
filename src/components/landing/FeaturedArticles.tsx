@@ -1,14 +1,9 @@
 import { Button } from '@/components/ui/button';
-import ArticleCard from '@/components/articleCard';
 import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
-import { getAllArticles } from '../../utils/getAllArticles';
+import Articles from '@/components/articles';
 
 export default function FeaturedArticles() {
-  const allArticles = getAllArticles();
-
-  //limit to the 5 articles displayed on the main page
-  const articles = allArticles.slice(0, 5);
   return (
     <section className="space-y-6">
       <div className="flex items-center justify-between">
@@ -23,16 +18,7 @@ export default function FeaturedArticles() {
         </Button>
       </div>
       <div className="space-y-5">
-        {articles.map((article) => (
-          <ArticleCard
-            key={article.slug}
-            href={`/articles/${article.slug}`}
-            title={article.title}
-            subtitle={article.subtitle}
-            tags={article.tags}
-            date={article.date}
-          />
-        ))}
+        <Articles limit={5} />
       </div>
     </section>
   );
