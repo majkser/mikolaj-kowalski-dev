@@ -23,10 +23,12 @@ export default function ArticleCard({
         <CardHeader>
           <div className="flex items-start justify-between">
             <div className="space-y-2">
-              <CardTitle className="text-xl group-hover:text-primary transition-colors">
+              <CardTitle className="text-xl group-hover:text-primary transition-colors break-words">
                 {title}
               </CardTitle>
-              <CardDescription>{subtitle}</CardDescription>
+              <CardDescription className="break-words">
+                {subtitle}
+              </CardDescription>
               {timeToRead && (
                 <>
                   <p className="text-sm text-muted-foreground">
@@ -36,7 +38,7 @@ export default function ArticleCard({
                 </>
               )}
               <p className="text-sm text-muted-foreground">{date}</p>
-              <div className="flex gap-2 pt-2">
+              <div className="flex flex-wrap gap-2 pt-2">
                 {tags.map((tag) => (
                   <Badge key={tag} variant="secondary">
                     {tag}

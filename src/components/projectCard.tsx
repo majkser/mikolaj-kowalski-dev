@@ -27,21 +27,23 @@ export default function ProjectCard({
         )}
         <CardHeader>
           <div className="flex items-start justify-between">
-            <div className="space-y-2">
+            <div className="space-y-2 break-words">
               <CardTitle className="text-xl group-hover:text-primary transition-colors">
                 {title}
               </CardTitle>
-              <CardDescription>{subtitle}</CardDescription>
-              <p className="text-sm text-muted-foreground">{date}</p>
+              <CardDescription className="break-words">
+                {subtitle}
+              </CardDescription>
+              <p className="text-sm text-muted-foreground">{date}</p>{' '}
+              <div className="flex flex-wrap gap-2 pt-2">
+                {tags.map((tag) => (
+                  <Badge key={tag} variant="secondary">
+                    {tag}
+                  </Badge>
+                ))}
+              </div>
             </div>
             <ExternalLink className="w-4 h-4 text-muted-foreground flex-shrink-0 mt-1" />
-          </div>
-          <div className="flex gap-2 pt-2">
-            {tags.map((tag) => (
-              <Badge key={tag} variant="secondary">
-                {tag}
-              </Badge>
-            ))}
           </div>
         </CardHeader>
       </Card>
