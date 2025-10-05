@@ -6,9 +6,18 @@ export default function Footer() {
     <footer className="bg-gradient-to-r from-muted/40 to-muted/20 border-t border-border relative">
       <div className="container mx-auto px-4 py-12 text-center text-foreground">
         <div className="flex justify-around items-center flex-col md:flex-row gap-6">
-          <h3 className="text-lg font-semibold mb-2">
-            © 2025 Mikołaj Kowalski. All rights reserved.
-          </h3>
+          <div className="text-center md:text-left">
+            <h3 className="text-lg font-semibold mb-2">
+              © 2025 Mikołaj Kowalski. All rights reserved.
+            </h3>
+            <Link
+              href="https://github.com/majkser/mikolaj-kowalski-dev"
+              target="_blank"
+              className="text-sm text-foreground/70 hover:bg-foreground/10 transition-all px-2 py-1 rounded"
+            >
+              View source code of this website
+            </Link>
+          </div>
           <div className="flex gap-8">
             <div className="relative group">
               <Link
