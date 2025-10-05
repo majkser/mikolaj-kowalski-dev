@@ -31,8 +31,8 @@ export default function ProjectCard({
               <CardTitle className="text-xl hover:text-primary transition-colors">
                 {title}
               </CardTitle>
-              <p className="text-sm text-muted-foreground">{date}</p>
               <CardDescription>{subtitle}</CardDescription>
+              <p className="text-sm text-muted-foreground">{date}</p>
             </div>
             <ExternalLink className="w-4 h-4 text-muted-foreground flex-shrink-0 mt-1" />
           </div>

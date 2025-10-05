@@ -1,9 +1,6 @@
-import ProjectCard from '@/components/projectCard';
-import { getAllProjects } from '@/utils/getAllProjects';
+import Projects from '@/components/projects';
 
 export default function ProjectsPage() {
-  const projects = getAllProjects();
-
   return (
     <div className="bg-gradient-to-b from-background to-primary/25 min-h-screen">
       <div className="container mx-auto px-4 pt-16 pb-24">
@@ -18,17 +15,7 @@ export default function ProjectsPage() {
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {projects.map((project) => (
-            <ProjectCard
-              key={project.slug}
-              href={`/projects/${project.slug}`}
-              title={project.title}
-              subtitle={project.subtitle}
-              tags={project.tags}
-              image={`/${project.image}`}
-              date={project.date}
-            />
-          ))}
+          <Projects />
         </div>
       </div>
     </div>

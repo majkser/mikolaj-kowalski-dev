@@ -1,14 +1,9 @@
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
-import ProjectCard from '@/components/projectCard';
 import Link from 'next/link';
-import { getAllProjects } from '../../utils/getAllProjects';
+import Projects from '@/components/projects';
 
 export default function RecentProjects() {
-  const allProjects = getAllProjects();
-
-  //limit to the 2 projects displayed on the main page
-  const projects = allProjects.slice(0, 2);
   return (
     <section className="space-y-6">
       <div className="flex items-center justify-between">
@@ -21,17 +16,7 @@ export default function RecentProjects() {
         </Button>
       </div>
       <div className="space-y-4">
-        {projects.map((project) => (
-          <ProjectCard
-            key={project.slug}
-            href={`/projects/${project.slug}`}
-            title={project.title}
-            subtitle={project.subtitle}
-            tags={project.tags}
-            image={`/${project.image}`}
-            date={project.date}
-          />
-        ))}
+        <Projects limit={2} />
       </div>
     </section>
   );
