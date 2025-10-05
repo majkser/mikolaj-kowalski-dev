@@ -15,7 +15,7 @@ export default function ProjectCard({
 }: CardProps) {
   return (
     <Link href={href}>
-      <Card className="hover:shadow-lg transition-shadow p-0 pb-6 my-5">
+      <Card className="hover:shadow-lg transition-shadow p-0 pb-6 my-5 group">
         {image && (
           <Image
             src={image}
@@ -28,7 +28,7 @@ export default function ProjectCard({
         <CardHeader>
           <div className="flex items-start justify-between">
             <div className="space-y-2">
-              <CardTitle className="text-xl hover:text-primary transition-colors">
+              <CardTitle className="text-xl group-hover:text-primary transition-colors">
                 {title}
               </CardTitle>
               <CardDescription>{subtitle}</CardDescription>

@@ -19,11 +19,11 @@ export default function ArticleCard({
 }: CardProps) {
   return (
     <Link href={href}>
-      <Card className="hover:shadow-lg transition-shadow my-5">
+      <Card className="hover:shadow-lg transition-shadow my-5 group">
         <CardHeader>
           <div className="flex items-start justify-between">
             <div className="space-y-2">
-              <CardTitle className="text-xl hover:text-primary transition-colors">
+              <CardTitle className="text-xl group-hover:text-primary transition-colors">
                 {title}
               </CardTitle>
               <CardDescription>{subtitle}</CardDescription>
@@ -35,6 +35,7 @@ export default function ArticleCard({
                   </p>
                 </>
               )}
+              <p className="text-sm text-muted-foreground">{date}</p>
               <div className="flex gap-2 pt-2">
                 {tags.map((tag) => (
                   <Badge key={tag} variant="secondary">
@@ -42,7 +43,6 @@ export default function ArticleCard({
                   </Badge>
                 ))}
               </div>
-              <p className="text-sm text-muted-foreground">{date}</p>
             </div>
             <ExternalLink className="w-4 h-4 text-muted-foreground flex-shrink-0 mt-1" />
           </div>
