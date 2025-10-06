@@ -1,0 +1,61 @@
+---
+title: 'Storage'
+subtitle: 'WeTransfer on juice'
+date: '2025.10'
+tags:
+  [
+    'Express',
+    'Next.js',
+    'Nx',
+    'MySQL',
+    'tailwind.css',
+    'shadcn',
+    'Aceternity UI',
+  ]
+image: storage.webp
+---
+
+This project is still in progress. urrently, it allows users to create an account or log in via Gmail (OAuth2), browse/download the files that they have access to and also they can generate link so that users without an account can also download specific files. Users with admin status can send files to the server, grant admin to other users and grant or revoke file access to other users. The project is mostly done but it still lacks some styling issues and mobile app which is crucial for this kind of service.
+
+<MdxImage src="/storage.webp" alt="dashboard of storage system" />
+
+## ✨ Features
+
+<FeaturesGrid
+  features={[
+    {
+      icon: '🔐',
+      title: 'User Authentication',
+      description: 'Secure login and registration system via Gmail(oAuth2)',
+    },
+    {
+      icon: '📂',
+      title: 'File Management',
+      description: 'Upload, browse, and download files with access control',
+    },
+    {
+      icon: '🔗',
+      title: 'Link Sharing',
+      description: 'Generate shareable links for external users',
+    },
+    {
+      icon: '👥',
+      title: 'Admin Controls',
+      description: 'Manage user roles and file access permissions',
+    },
+  ]}
+/>
+
+## 🛠️ Development Approach
+
+<InfoBox>
+    Built with **Express** for the backend, **Next.js** for the frontend, **MySQL** as the database, and styled using **tailwind.css**, **shadcn**, and **Aceternity UI**.
+
+    This project showcases advanced full-stack development, including authentication via Gmail (oAuth2), file management, and user role-based access control. It highlights real-world application concepts like secure file sharing, admin functionalities, and responsive design.
+
+</InfoBox>
+
+<ProjectCTA
+  url="https://github.com/majkser/storage-monorepo"
+  label="View Project Code"
+/>
