@@ -34,7 +34,7 @@ export default async function ProjectPage({
     <div className="container mx-auto px-4 py-12 max-w-4xl">
       <article className="prose lg:prose-xl dark:prose-invert mx-auto">
         <div className="mb-8 border-l-4 border-primary pl-4">
-          <h1 className="text-4xl font-bold mb-2 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+          <h1 className="text-4xl font-bold mb-2 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent py-1">
             {frontmatter.title}
           </h1>
           <h2 className="text-2xl mt-0 opacity-80">{frontmatter.subtitle}</h2>
